@@ -61,5 +61,30 @@ public class CP3LinkedList<E> {
 		}
 	}
 
+	public int size(){
+		Node curr = first;
+		int size = 0;
+		while(curr != null){
+			size++;
+			curr = curr.next;
+		}
+		return size;
+	}
+
+	public void addLast(E element){
+		Node newLink = new Node();
+		newLink.data = element;
+		if (first == null){
+			addFirst(element);
+		}
+		else {
+			Node current = first;
+			while (current.next != null) {
+				current = current.next;
+			}
+			current.next = newLink;
+		}
+	}
+
 	
 }
