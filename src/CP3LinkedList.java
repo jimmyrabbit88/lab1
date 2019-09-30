@@ -86,5 +86,17 @@ public class CP3LinkedList<E> {
 		}
 	}
 
+	//Recursion
+	public int recSize(){
+		return recursionSize(first);
+	}
+
+	private int recursionSize(Node head){
+		if(head == null){
+			return 0;
+		}
+		else return 1 + recursionSize(head.next);
+	}
+
 	
 }
