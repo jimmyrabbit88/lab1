@@ -86,6 +86,15 @@ public class CP3LinkedList<E> {
 		}
 	}
 
+	public void print(){
+		//outputs the data on the list
+		Node current = first;
+		while (current != null){
+			System.out.println(current.data);
+			current = current.next;
+		}
+	}
+
 	//Recursion
 	public int recSize(){
 		return recursionSize(first);
@@ -97,6 +106,62 @@ public class CP3LinkedList<E> {
 		}
 		else return 1 + recursionSize(head.next);
 	}
+
+	public void printRec(){
+		printRec(this.first);
+	}
+
+	private void printRec(Node head){
+		if(head == null){
+			return;
+		}
+		else{
+			System.out.println(head.data);
+			printRec(head.next);
+		}
+	}
+
+    public void printRecReverse(){
+        printRecReverse(this.first);
+    }
+
+    private void printRecReverse(Node head){
+        if(head == null){
+            return;
+        }
+        else{
+            printRecReverse(head.next);
+            System.out.println(head.data);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	
 }
